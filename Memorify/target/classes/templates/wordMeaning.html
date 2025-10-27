@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Example</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div>
+
+    <div>
+        <textarea rows="10" cols="50" id="t"></textarea>
+    </div>
+    <form method="POST" th:action="@{/save}" th:object="${wordMeaning}">
+        <p>Word :<span id="aa" th:text="*{word} "></span></p>
+        <input th:field="*{word}" type="hidden"/>
+        <p>Type :<span th:text="*{type}"></span></p>
+        <input th:field="*{type}" type="hidden"/>
+        <input name="meaning" th:field="*{meaning}" type="text"/>
+        <button type="submit">Submit</button>
+    </form>
+</div><script src="/js/wm.js"></script>
+
+
+</body>
+</html>

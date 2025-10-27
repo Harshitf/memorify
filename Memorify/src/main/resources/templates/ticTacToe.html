@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/ticTacToe.css}"/>
+</head>
+<body>
+
+<h1>Tic Tac Toe</h1>
+
+<p>Press Any Key to play!</p>
+<form method="post" th:action="@{/save-game}" th:object="${multiplayer} ">
+    <div id="multiplayerGame" >multiplayer game</div>
+    <div id="aiOpponent">ai opponent</div>
+    <div id="get-player-details" style="display: none">
+        <label th:for="p1">Enter player name</label>
+        <input id="playerName" required th:field="*{p1.username}" type="text"/>
+        <div id="opponentName">
+        <label>Enter opponent name</label>
+        <input  required th:field="*{p2.username}" type="text"/></div>
+        <button class="start" type="button">start</button>
+    </div>
+
+    <div id="noOfGames" style="display: none">
+        <p class="l">Game No: </p>
+    </div>
+
+    <div class="board" style="display: none">
+        <img alt="tic tac toe board" data-col="1" data-row="1" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="2" data-row="1" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="3" data-row="1" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/><br>
+        <img alt="tic tac toe board" data-col="1" data-row="2" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="2" data-row="2" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="3" data-row="2" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/><br>
+        <img alt="tic tac toe board" data-col="1" data-row="3" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="2" data-row="3" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/>
+        <img alt="tic tac toe board" data-col="3" data-row="3" draggable="false" height="100px"
+             th:src="@{/images/blank-image.png}" width="100px"/><br>
+    </div>
+
+    <div>
+        <button id="resetButton" type="reset">Reset Game</button>
+    </div>
+    <button type="submit">submit</button>
+    <div id="p1-stats">
+        <input class="p1-win" th:field="*{p1.wins}" type="hidden" value="0">
+        <input class="p1-losses" th:field="*{p1.losses}" type="hidden" value="0">
+        <input class="p1-ties" th:field="*{p1.ties}" type="hidden" value="0">
+        <input class="p1-opp" th:field="*{p1.opponentName}" type="hidden" value="">
+    </div>
+    <div id="p2-stats">
+        <input class="p2-win" th:field="*{p2.wins}" type="hidden" value="0">
+        <input class="p2-losses" th:field="*{p2.losses}" type="hidden" value="0">
+        <input class="p2-ties" th:field="*{p2.ties}" type="hidden" value="0">
+        <input class="p2-opp" th:field="*{p2.opponentName}" type="hidden" value="">
+    </div>
+
+
+</form>
+<script src="/js/ticTacToe.js"></script>
+
+</body>
+</html>

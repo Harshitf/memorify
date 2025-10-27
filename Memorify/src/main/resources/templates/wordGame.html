@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Example</title>
+</head>
+<body>
+
+<tr th:each="r: *{word}">
+
+    <input th:value="${r}" maxlength="1"/>
+</tr>
+
+
+</body>
+</html>

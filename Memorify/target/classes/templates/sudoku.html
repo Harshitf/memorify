@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Example</title>
+    <style>
+        input {
+            width: 10px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Sudoku Game</h1>
+
+<table id="sudoku-board" th:object="${sudoku}">
+
+    <tr th:each="row, rowStat : *{board}">
+        <td th:each="cell, colStat : ${row}">
+            <input type="text"
+                   th:id="'cell-' + ${rowStat.index} + '-' + ${colStat.index}"
+                   th:value="${cell == 0} ? '' : ${cell}"
+                   maxlength="1" />
+        </td>
+    </tr>
+    </table>
+<br/>
+<button onclick="submitBoard()">Submit</button>
+<div id="result"></div>
+<script src="/js/sudoku.js"></script>
+</body>
+</html>

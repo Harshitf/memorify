@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+.board{
+
+display: block;
+margin-left: 38%;
+}
+ p {
+    text-align: center;
+     font-size: x-large;
+}
+ .reset-button{
+     margin-left: 47%;
+ }
+ #aiOpponent,#multiplayerGame{
+     width: 5rem;
+     height: 5rem;
+     margin: 1.5rem;
+     background-color: burlywood;
+
+
+ }

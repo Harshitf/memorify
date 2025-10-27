@@ -1,0 +1,77 @@
+.botToogle{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #007bff;
+    cursor: pointer;
+    z-index: 1000;
+}
+.chatBox{
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100;
+    border: 2px solid #C5ECBE;
+    background: #F7F3CE;
+    color: #4797B1;
+    border-radius: 20px;
+    padding: 10px;
+}
+.loader{
+    font-size: 30px;
+    color: #007bff;
+    animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.container::-webkit-scrollbar{
+    width: 4px;
+}
+.container::-webkit-scrollbar-track{
+    background: #F7F3CE;
+}
+.container::-webkit-scrollbar-thumb{
+    background:#4797B1 ;
+    border-radius: 20px;
+}
+.container{
+    overflow-y:scroll ;
+    overflow-x: hidden;
+}
+.messageSendDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+.chatSend{
+    background: #FFDEDE;
+    border:2px solid #C5ECBE;
+    color:#4797B1;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 30px;
+
+}
+.chatInput{
+    margin: 10px;
+    background: #F7F3CE;
+    border:2px solid #C5ECBE;
+    color:#4797B1;
+    font-weight: bold;
+    border-radius: 20px;
+    animation: none;
+    font-size: 25px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    align-content: center;
+
+}
+
+.chatInput:focus{
+    outline: none;
+}
